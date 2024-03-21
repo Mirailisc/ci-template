@@ -1,6 +1,6 @@
-# CI for Testing and Deploying Kronos's workflow
+# CI for Testing and Deploying
 
-This repo contains re-usable CI/CD workflows for testing and deploying Kronos's projects.
+This repo contains re-usable CI/CD workflows for testing and deploying my projects.
 
 ## Workflows
 
