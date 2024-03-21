@@ -11,7 +11,7 @@ on:
         required: true
       docker_password:
         required: true
-      github_token:
+      token:
         required: true
 
 jobs:
@@ -38,7 +38,7 @@ jobs:
         with:
           repository: KronosMoe/kronos-helm
           ref: "main"
-          token: ${{ secrets.github_token }}
+          token: ${{ secrets.token }}
 
       - name: Git config
         run: |
