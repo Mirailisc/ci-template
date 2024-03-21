@@ -12,4 +12,4 @@ This repo contains re-usable CI/CD workflows for testing and deploying my projec
 
 ### Deploying
 
-- [Docker](.github/workflows/docker.yml)
+- [K8s Deploy](.github/workflows/k8s-deploy.yml)
