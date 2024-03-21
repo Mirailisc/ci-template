@@ -2,6 +2,10 @@ name: ESLint
 
 on:
   workflow_call:
+    inputs:
+      custom-run:
+        required: true
+        type: string
 
 jobs:
   eslint:
@@ -26,5 +30,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Run custom ESLint (if exist)
+        if: "${{ input.custom-run != ''}}"
+        run: ${{ inputs.custom-run }}
+
       - name: Run ESLint
+        if: "${{ input.custom-run == ''}}"
         run: pnpm lint --no-cache
