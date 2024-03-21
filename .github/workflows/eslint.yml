@@ -31,9 +31,9 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Run custom ESLint (if exist)
-        if: "${{ input.custom-run != ''}}"
+        if: "${{ inputs.custom-run != ''}}"
         run: ${{ inputs.custom-run }}
 
       - name: Run ESLint
-        if: "${{ input.custom-run == ''}}"
+        if: "${{ inputs.custom-run == ''}}"
         run: pnpm lint --no-cache
