@@ -6,10 +6,10 @@ This repo contains re-usable CI/CD workflows for testing and deploying Kronos's 
 
 ### Testing
 
-- [Build](ci/build.yml)
-- [ESLint](ci/eslint.yml)
-- [Docker](ci/docker.yml)
+- [Build](.github/actions/build.yml)
+- [ESLint](.github/actions/eslint.yml)
+- [Docker](.github/actions/docker.yml)
 
 ### Deploying
 
-- [Docker](ci/docker.yml)
+- [Docker](.github/actions/docker.yml)
