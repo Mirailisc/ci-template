@@ -6,10 +6,10 @@ This repo contains re-usable CI/CD workflows for testing and deploying my projec
 
 ### Testing
 
-- [Build](.github/actions/build.yml)
-- [ESLint](.github/actions/eslint.yml)
-- [Docker](.github/actions/docker.yml)
+- [Build](.github/workflows/build.yml)
+- [ESLint](.github/workflows/eslint.yml)
+- [Docker](.github/workflows/docker.yml)
 
 ### Deploying
 
-- [Docker](.github/actions/docker.yml)
+- [Docker](.github/workflows/docker.yml)
