@@ -8,67 +8,7 @@ on:
         type: string
 
 jobs:
-  build-windows:
-    name: Node build Windows
-    runs-on: Windows-latest
-
-    permissions:
-      contents: read
-      security-events: write
-      actions: read
-
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 8
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "18.x"
-          cache: "pnpm"
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Custom build (if exist)
-        if: "${{ inputs.custom-run != ''}}"
-        run: ${{ inputs.custom-run }}
-
-      - name: Build
-        if: "${{ inputs.custom-run == ''}}"
-        run: pnpm build
-
-  build-macos:
-    name: Node build macOS
-    runs-on: macos-latest
-
-    permissions:
-      contents: read
-      security-events: write
-      actions: read
-
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 8
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "18.x"
-          cache: "pnpm"
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Custom build (if exist)
-        if: "${{ inputs.custom-run != ''}}"
-        run: ${{ inputs.custom-run }}
-
-      - name: Build
-        if: "${{ inputs.custom-run == ''}}"
-        run: pnpm build
-
-  build-ubuntu:
+  build:
     name: Node build Ubuntu
     runs-on: ubuntu-latest
 
