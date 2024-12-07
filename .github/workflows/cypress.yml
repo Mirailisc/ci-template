@@ -1,0 +1,41 @@
+name: Cypress
+
+on:
+  workflow_call:
+    inputs:
+      start:
+        required: true
+        type: string
+      wait-on:
+        required: true
+        type: string
+
+jobs:
+  cypress:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "pnpm"
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v5
+        with:
+          browser: chrome
+          start: ${{ inputs.start }}
+          wait-on: ${{ inputs.wait-on }}
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Cypress Videos
+          path: cypress/videos
